@@ -3,7 +3,8 @@ const keys = {
   FILL_ORDER: "fillOrder",
   CANCEL_ORDER: "cancelOrder",
   REMOVE_ORDER: "removeOrder",
-  UPDATE_ORDER_STATUS: "updateOrderStatus"
+  UPDATE_ORDER_STATUS: "updateOrderStatus",
+  INSERT_MATCHER: "insertMatcher"
 };
 
 const types = {
