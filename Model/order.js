@@ -4,36 +4,38 @@ mongoose.Promise = global.Promise;
 
 const OrderModel = new Schema(
   {
-    exchangeAddress: { type: String },
-    expirationTimeSeconds: { type: Object },
-    feeRecipientAddress: { type: String },
-    makerAddress: { type: String },
-    makerAssetAmount: { type: Object },
-    makerAssetData: { type: String },
-    makerFee: { type: Object },
-    orderHashHex: { type: String, index : 1},
-    salt: { type: Object },
-    senderAddress: { type: String },
-    signature: { type: String },
-    takerAddress: { type: String },
-    takerAssetAmount: { type: Object },
-    takerAssetData: { type: String },
-    takerFee: { type: Object },
-    statusCode: {type: Number, default: 0, index: 1}, // new
-    availableAmount: {type: Number}, // new
-    price: {type: Number}, // new
-    marketID: {type : String, default : 'WETH-ZRX'}, // new
-    takerSide: {type: String, default : 'sell'}, // new
+    signedOrder: {
+      exchangeAddress: { type: String },
+      makerAddress: { type: String },
+      takerAddress: { type: String },
+      senderAddress: { type: String },
+      feeRecipientAddress: { type: String },
+      expirationTimeSeconds: { type: Object },
+      salt: { type: Object },
+      makerAssetAmount: { type: Object },
+      takerAssetAmount: { type: Object },
+      makerAssetData: { type: String },
+      takerAssetData: { type: String },
+      makerFee: { type: Object },
+      takerFee: { type: Object },
+      signature: { type: String },
+      orderHashHex: { type: String, index: 1 }
+    },
+    statusCode: { type: Number, default: 0, index: 1 }, // new
+    availableAmount: { type: Number }, // new
+    price: { type: Number }, // new
+    marketID: { type: String, default: "WETH-ZRX" }, // new
+    takerSide: { type: String, default: "sell" }, // new
     addressFiller: { type: String },
     txHash: { type: String },
-    parentID: {type: String},
-    txBalance: {type: Number},//txBalance
-    createdAt: {type: Date, index: 1},
-    updatedAt: {type: Date, index: 1},
-    createdAtTimestamp: {type: Number, index: 1},
-    updatedAtTimestamp: {type: Number, index: 1},
-    blockNumber: {type: Number},
-    actualTxCost: {type: String},
+    parentID: { type: String },
+    txBalance: { type: Number }, //txBalance
+    createdAt: { type: Date, index: 1 },
+    updatedAt: { type: Date, index: 1 },
+    createdAtTimestamp: { type: Number, index: 1 },
+    updatedAtTimestamp: { type: Number, index: 1 },
+    blockNumber: { type: Number },
+    actualTxCost: { type: String }
   },
   { strict: false }
 );
@@ -44,7 +46,7 @@ OrderModel.pre("save", function(next) {
     this.createdAt = now;
   }
   if (!this.createdAtTimestamp) {
-   this.createdAtTimestamp = tmp;
+    this.createdAtTimestamp = tmp;
   }
 
   next();
@@ -57,6 +59,6 @@ OrderModel.pre("update", function() {
   }
   if (!this.updatedAtTimestamp) {
     this.updatedAtTimestamp = tmp;
-   }
+  }
 });
 module.exports = mongoose.model("order", OrderModel, "order");

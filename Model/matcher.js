@@ -8,7 +8,7 @@ const MatcherModel = new Schema(
     marketID: { type: String, required: true },
     type: { type: Number, required: true, index: 1 }, // indexed so better to be Number  0: buy, 1 :sell
     price: { type: Number, required: true, index: 1 },
-    totalAmount: { type: Number,required: true },
+    totalAmount: { type: Object,required: true },
     orders: { type: Array } // {_id, availableAmount}
   },
   { strict: false }
