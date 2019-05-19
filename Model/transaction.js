@@ -4,10 +4,10 @@ mongoose.Promise = global.Promise;
 
 const TransactionModel = new Schema(
   {
-    orders: { type: Array },
-    price: { type: Number },
-    txHash: { type: String },
-    status: { type: Number },
+    orders: { type: Array, required: true },
+    price: { type: Number, required: true },
+    txHash: { type: String, required: true},
+    status: { type: Number, required: true},
   },
   { strict: false }
 );

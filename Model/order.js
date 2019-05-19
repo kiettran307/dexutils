@@ -22,7 +22,7 @@ const OrderModel = new Schema(
       orderHashHex: { type: String, index: 1 }
     },
     statusCode: { type: Number, default: 0, index: 1 }, // new
-    availableAmount: { type: Object }, // new
+    availableAmount: { type: Number }, // new
     price: { type: Number }, // new
     marketID: { type: String, default: "WETH-ZRX" }, // new
     takerSide: { type: String, default: "sell" }, // new
