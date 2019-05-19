@@ -4,7 +4,8 @@ const keys = {
   CANCEL_ORDER: "cancelOrder",
   REMOVE_ORDER: "removeOrder",
   UPDATE_ORDER_STATUS: "updateOrderStatus",
-  INSERT_MATCHER: "insertMatcher"
+  INSERT_MATCHER: "insertMatcher",
+  TX_STATUS_UPDATE: "txStatusUpdate"
 };
 
 const types = {
