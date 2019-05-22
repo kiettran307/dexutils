@@ -8,6 +8,8 @@ const TransactionModel = new Schema(
     price: { type: Number, required: true },
     txHash: { type: String, required: true},
     status: { type: Number, required: true},
+    addressFiller: { type: String, required: true},
+    marketID: { type: String, required: true},
   },
   { strict: false }
 );
