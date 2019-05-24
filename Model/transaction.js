@@ -10,6 +10,7 @@ const TransactionModel = new Schema(
     status: { type: Number, required: true},
     addressFiller: { type: String, required: true},
     marketID: { type: String, required: true},
+    takerSide: { type: String, required: true}
   },
   { strict: false }
 );
