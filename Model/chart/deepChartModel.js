@@ -7,4 +7,4 @@ const Model = new Schema({
   bids: {type: Array, required: true},
 
 }, {strict: false});
-module.exports = mongoose.model('deepChart', Model, 'deepChart');
+module.exports = mongoose.model('deep_chart', Model, 'deep_chart');

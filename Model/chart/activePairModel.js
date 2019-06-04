@@ -8,4 +8,4 @@ const Model = new Schema(
   },
   { strict: false }
 );
-module.exports = mongoose.model("activePair", Model, "activePair");
+module.exports = mongoose.model("active_pair", Model, "active_pair");

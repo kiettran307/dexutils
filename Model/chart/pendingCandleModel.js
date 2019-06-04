@@ -20,4 +20,4 @@ Model.pre('save', function(next) {
   }
   next();
 });
-module.exports = mongoose.model('pendingCandle', Model, 'pendingCandle');
+module.exports = mongoose.model('pending_candle', Model, 'pending_candle');

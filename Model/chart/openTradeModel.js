@@ -8,4 +8,4 @@ const Model = new Schema({
   timestamp: {type: Number, required: true, index: 1},
   isBuy: {type: Boolean, required: true}
 }, {strict: false});
-module.exports = mongoose.model('openTrade', Model, 'openTrade');
+module.exports = mongoose.model('opentrade', Model, 'opentrade');
