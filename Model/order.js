@@ -53,12 +53,28 @@ OrderModel.pre("save", function(next) {
 });
 OrderModel.pre("update", function() {
   const tmp = Math.round(new Date().getTime() / 1000);
+  const now = new Date();
+
   if (!this.updatedAt) {
     this.updatedAt = now;
-    this.update({}, { $set: { updateAt: tmp } });
+    this.update({}, { $set: { updatedAt: tmp } });
   }
   if (!this.updatedAtTimestamp) {
     this.updatedAtTimestamp = tmp;
+  }
+});
+OrderModel.pre("updateOne", function() {
+  const tmp = Math.round(new Date().getTime() / 1000);
+  const now = new Date();
+
+  if (!this.updatedAt) {
+    this.updatedAt = now;
+    this.update({}, { $set: { updatedAt: tmp } });
+  }
+  if (!this.updatedAtTimestamp) {
+    this.updatedAtTimestamp = tmp;
+    this.update({}, { $set: { updatedAtTimestamp: tmp } });
+
   }
 });
 module.exports = mongoose.model("order", OrderModel, "order");
