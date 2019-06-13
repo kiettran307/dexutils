@@ -69,7 +69,7 @@ OrderModel.pre("updateOne", function() {
 
   if (!this.updatedAt) {
     this.updatedAt = now;
-    this.update({}, { $set: { updatedAt: tmp } });
+    this.update({}, { $set: { updatedAt: now } });
   }
   if (!this.updatedAtTimestamp) {
     this.updatedAtTimestamp = tmp;
