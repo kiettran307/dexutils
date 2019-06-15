@@ -24,8 +24,8 @@ const config = {
     CRONJOB_24H_INTERVAL: "0 0 0 * * *", //
     CRONJOB_1M5S_INTERVAL: "5 * * * * *", // every 5th second of every minute
     CRONJOB_1S_INTERVAL: "0 * * * * *", // every first second of every minute
-    CRONJOB_56M_INTERVAL: "0 57 * * * *",
-    CRONJOB_23H_55M_INTERVAL: "0 57 23 * * *",
+    CRONJOB_59M_INTERVAL: "0 59 * * * *",
+    CRONJOB_23H_59M_INTERVAL: "0 59 23 * * *",
   
     CRONJOB_59M_INTERVAL: "0 59 * * * *",
   
