@@ -5,6 +5,7 @@ const TimeConfig = require("./config/time");
 const MatcherModel = require("./Model/matcher");
 const MemcacheHandler = require("./memcached/memcacheHandler");
 const TxModel = require("./Model/transaction");
+const TokenModel = require("./Model/token");
 // chart model
 const ActivePairModel = require("./Model/chart/activePairModel");
 const CandleModel = require("./Model/chart/candleModel");
@@ -26,5 +27,6 @@ module.exports = {
   DeepChartModel,
   OpenTradeModel,
   PendingCandleModel,
-  TradeModel
+  TradeModel,
+  TokenModel
 };
