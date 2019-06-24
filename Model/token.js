@@ -10,10 +10,15 @@ const TokenModel = new Schema(
     address: { type: String, required: true, index: 1 },
     blog: { type: String },
     homePage: { type: String },
-    isApproved : {type: Boolean, default : false},
+    isApproved: { type: Boolean, default: false },
+    status: { type: Number, default: 0 },
+    isLoading: { type: Boolean, default: false },
+    disabledField: { type: Boolean, default: false },
     email: {
-      type: String, required: true,
-      trim: true, unique: true,
+      type: String,
+      required: true,
+      trim: true,
+      unique: true,
       match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     },
     reddit: { type: String },
@@ -29,4 +34,12 @@ const TokenModel = new Schema(
   },
   { strict: false }
 );
+
+TokenModel.pre("save", function(next) {
+  const now = new Date();
+  if (!this.insertAt) {
+    this.insertAt = now;
+  }
+  next();
+});
 module.exports = mongoose.model("token", TokenModel, "token");
