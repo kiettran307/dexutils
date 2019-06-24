@@ -10,6 +10,7 @@ const TokenModel = new Schema(
     address: { type: String, required: true, index: 1 },
     blog: { type: String },
     homePage: { type: String },
+    isApproved : {type: Boolean, default : false},
     email: {
       type: String, required: true,
       trim: true, unique: true,
