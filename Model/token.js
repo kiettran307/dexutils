@@ -10,7 +10,11 @@ const TokenModel = new Schema(
     address: { type: String, required: true, index: 1 },
     blog: { type: String },
     homePage: { type: String },
-    email: { type: String },
+    email: {
+      type: String, required: true,
+      trim: true, unique: true,
+      match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+    },
     reddit: { type: String },
     youtube: { type: String },
     linkedin: { type: String },
