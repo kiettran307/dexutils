@@ -4,7 +4,8 @@ const Model = new Schema(
   {
     pair_id: { type: Number, required: true, index: 1 },
     pair_name: { type: String, required: true },
-    _id: String
+    _id: { type: String },
+    token_name: { type: String, required: true }
   },
   { strict: false }
 );

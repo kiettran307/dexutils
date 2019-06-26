@@ -4,6 +4,7 @@ mongoose.Promise = global.Promise;
 
 const TokenModel = new Schema(
   {
+    _id: { type: String, index: 1 },
     name: { type: String, required: true, index: 1 },
     symbol: { type: String, required: true, index: 1 },
     decimals: { type: Number, required: true },
