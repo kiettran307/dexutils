@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 
 const TokenModel = new Schema(
   {
-    _id: { type: String, index: 1 },
+    _id: { type: String},
     name: { type: String, required: true, index: 1 },
     symbol: { type: String, required: true, index: 1 },
     decimals: { type: Number, required: true },
@@ -19,7 +19,7 @@ const TokenModel = new Schema(
       type: String,
       // required: true,
       trim: true,
-      unique: true,
+      // unique: true,
       match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     },
     reddit: { type: String },
