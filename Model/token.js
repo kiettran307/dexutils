@@ -18,7 +18,7 @@ const TokenModel = new Schema(
     email: {
       type: String,
       // required: true,
-      trim: true,
+      // trim: true,
       // unique: true,
       match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     },
