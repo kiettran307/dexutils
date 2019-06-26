@@ -16,11 +16,11 @@ const TokenModel = new Schema(
     isLoading: { type: Boolean, default: false },
     disabledField: { type: Boolean, default: false },
     email: {
-      type: String,
+      type: String
       // required: true,
       // trim: true,
       // unique: true,
-      match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+      // match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     },
     reddit: { type: String },
     youtube: { type: String },
