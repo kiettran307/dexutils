@@ -16,7 +16,7 @@ const TokenModel = new Schema(
     disabledField: { type: Boolean, default: false },
     email: {
       type: String,
-      required: true,
+      // required: true,
       trim: true,
       unique: true,
       match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
