@@ -26,7 +26,8 @@ const MarketModel = new Schema(
     lastPrice: { type: String },
     price24h: { type: String },
     amount24h: { type: String },
-    quoteTokenVolume24h: { type: String }
+    quoteTokenVolume24h: { type: String },
+    status: { type: Number, required : true, default : 0 },
   },
   { strict: false }
 );

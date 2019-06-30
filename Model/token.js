@@ -12,7 +12,7 @@ const TokenModel = new Schema(
     blog: { type: String },
     homePage: { type: String },
     isApproved: { type: Boolean, default: false },
-    status: { type: Number, default: 0 },
+    status: { type: Number, required : true, default: 0 },
     isLoading: { type: Boolean, default: false },
     disabledField: { type: Boolean, default: false },
     email: {
