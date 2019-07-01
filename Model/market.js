@@ -5,6 +5,7 @@ mongoose.Promise = global.Promise;
 const MarketModel = new Schema(
   {
     id: { type: String },
+    pair_id : { type : Number },
     baseToken: { type: String },
     baseTokenProjectUrl: { type: String },
     baseTokenName: { type: String },
