@@ -24,7 +24,8 @@ const OrderModel = new Schema(
     statusCode: { type: Number, default: 0, index: 1 }, // new
     availableAmount: { type: Number }, // new
     price: { type: Number }, // new
-    marketID: { type: String, default: "WETH-ZRX" }, // new
+    pairName: { type: String }, // new type
+    pairID: { type: Number },
     takerSide: { type: String, default: "sell" }, // new
     addressFiller: { type: String },
     txHash: { type: String },
@@ -74,7 +75,6 @@ OrderModel.pre("updateOne", function() {
   if (!this.updatedAtTimestamp) {
     this.updatedAtTimestamp = tmp;
     this.update({}, { $set: { updatedAtTimestamp: tmp } });
-
   }
 });
 module.exports = mongoose.model("order", OrderModel, "order");

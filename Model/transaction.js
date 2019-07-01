@@ -9,7 +9,8 @@ const TransactionModel = new Schema(
     txHash: { type: String, required: true},
     status: { type: Number, required: true},
     addressFiller: { type: String, required: true},
-    marketID: { type: String, required: true},
+    pairName: { type: String, required: true},
+    pairID: { type: Numnber, required: true},
     takerSide: { type: String, required: true}
   },
   { strict: false }
