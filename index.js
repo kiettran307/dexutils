@@ -6,6 +6,7 @@ const MatcherModel = require("./Model/matcher");
 const MemcacheHandler = require("./memcached/memcacheHandler");
 const TxModel = require("./Model/transaction");
 const TokenModel = require("./Model/token");
+const ConfigModel = require("./Model/config");
 // chart model
 const ActivePairModel = require("./Model/chart/activePairModel");
 const CandleModel = require("./Model/chart/candleModel");
@@ -28,5 +29,6 @@ module.exports = {
   OpenTradeModel,
   PendingCandleModel,
   TradeModel,
-  TokenModel
+  TokenModel,
+  ConfigModel
 };
