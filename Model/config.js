@@ -4,8 +4,11 @@ mongoose.Promise = global.Promise;
 
 const Config = new Schema(
   {
-    name: { type: String, required: true, unique : true },
-    value: { type: Object, required: true },
+    rate: { type: Number},
+    feeTokenAddress: { type: String, unique: true, index: 1},
+    feeTokenSymbol: { type: String},
+    feeTokenName: { type: String},
+    feeTokenDecimals: { type: Number},
   },
   { strict: false }
 );
